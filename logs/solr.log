@@ -1,0 +1,840 @@
+INFO  - 2014-11-05 15:45:04.864; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 15:45:04.883; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 15:45:04.883; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 15:45:04.886; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 15:45:05.031; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 15:45:05.040; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 15:45:05.159; org.apache.solr.core.CoreContainer; New CoreContainer 547421409
+INFO  - 2014-11-05 15:45:05.160; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 15:45:05.171; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 15:45:05.172; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 15:45:05.172; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 15:45:05.172; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 15:45:05.172; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 15:45:05.173; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 15:45:05.173; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 15:45:05.173; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 15:45:05.174; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 15:45:05.285; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 15:45:05.288; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 15:45:05.289; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 15:45:05.290; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 15:45:05.386; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 15:45:05.402; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 15:45:05.406; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 15:45:05.406; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+ERROR - 2014-11-05 15:45:15.479; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+INFO  - 2014-11-05 15:55:06.018; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=547421409
+INFO  - 2014-11-05 15:57:17.882; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 15:57:17.892; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 15:57:17.892; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 15:57:17.894; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 15:57:18.013; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 15:57:18.021; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 15:57:18.047; org.apache.solr.core.CoreContainer; New CoreContainer 1010404925
+INFO  - 2014-11-05 15:57:18.048; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 15:57:18.055; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 15:57:18.056; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 15:57:18.057; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 15:57:18.057; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 15:57:18.091; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 15:57:18.093; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 15:57:18.094; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 15:57:18.094; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 15:57:18.200; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 15:57:18.214; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 15:57:18.218; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 15:57:18.218; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 15:57:58.222; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1010404925
+INFO  - 2014-11-05 16:15:52.663; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:15:52.683; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 16:15:52.684; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 16:15:52.686; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 16:15:52.874; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 16:15:52.884; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:15:53.034; org.apache.solr.core.CoreContainer; New CoreContainer 1276333923
+INFO  - 2014-11-05 16:15:53.035; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 16:15:53.049; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:15:53.050; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:15:53.050; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:15:53.051; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:15:53.051; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:15:53.051; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:15:53.052; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:15:53.052; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:15:53.054; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:15:53.171; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:15:53.175; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:15:53.176; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:15:53.177; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:15:53.259; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 16:15:53.273; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:15:53.280; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:15:53.280; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:15:54.140; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1276333923
+INFO  - 2014-11-05 16:15:54.526; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:15:54.539; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 16:15:54.539; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 16:15:54.540; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 16:15:54.663; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 16:15:54.668; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:15:54.730; org.apache.solr.core.CoreContainer; New CoreContainer 2085017475
+INFO  - 2014-11-05 16:15:54.731; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 16:15:54.739; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:15:54.740; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:15:54.740; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:15:54.740; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:15:54.740; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:15:54.740; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:15:54.741; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:15:54.741; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:15:54.742; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:15:54.822; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:15:54.825; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:15:54.826; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:15:54.827; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:15:54.881; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 16:15:54.899; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:15:54.903; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:15:54.904; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:18:32.510; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:18:32.528; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 16:18:32.528; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 16:18:32.530; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 16:18:32.692; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 16:18:32.699; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:18:32.782; org.apache.solr.core.CoreContainer; New CoreContainer 1276333923
+INFO  - 2014-11-05 16:18:32.783; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 16:18:32.795; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:18:32.796; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:18:32.796; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:18:32.796; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:18:32.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:18:32.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:18:32.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:18:32.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:18:32.799; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:18:32.883; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:18:32.886; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:18:32.887; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:18:32.888; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:18:46.098; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 16:18:46.109; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:18:46.112; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:18:46.113; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:18:46.670; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1276333923
+ERROR - 2014-11-05 16:19:24.343; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+ERROR - 2014-11-05 16:22:47.457; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+INFO  - 2014-11-05 16:31:58.439; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=2085017475
+INFO  - 2014-11-05 16:32:02.859; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:32:02.872; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 16:32:02.873; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 16:32:02.875; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 16:32:03.009; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 16:32:03.018; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:32:03.095; org.apache.solr.core.CoreContainer; New CoreContainer 1850585233
+INFO  - 2014-11-05 16:32:03.096; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 16:32:03.104; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:32:03.105; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:32:03.105; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:32:03.106; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:32:03.106; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:32:03.106; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:32:03.107; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:32:03.107; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:32:03.108; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:32:03.184; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:32:03.186; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:32:03.187; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:32:03.188; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:32:03.260; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 16:32:03.270; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:32:03.274; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:32:03.274; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+ERROR - 2014-11-05 16:32:27.132; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+ERROR - 2014-11-05 16:32:47.983; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+INFO  - 2014-11-05 16:43:26.817; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1850585233
+INFO  - 2014-11-05 16:43:28.050; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:43:28.061; org.apache.solr.core.SolrResourceLoader; No /solr/home in JNDI
+INFO  - 2014-11-05 16:43:28.061; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-11-05 16:43:28.062; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-11-05 16:43:28.187; org.apache.solr.core.ConfigSolr; Loading container configuration from /Volumes/Data/Work/Development/Coral/solr/solr.xml
+INFO  - 2014-11-05 16:43:28.194; org.apache.solr.core.ConfigSolr; /Volumes/Data/Work/Development/Coral/solr/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:43:28.220; org.apache.solr.core.CoreContainer; New CoreContainer 1001563300
+INFO  - 2014-11-05 16:43:28.221; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-11-05 16:43:28.230; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:43:28.230; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:43:28.230; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:43:28.230; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:43:28.230; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:43:28.231; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:43:28.231; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:43:28.231; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:43:28.232; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:43:28.262; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:43:28.264; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:43:28.265; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:43:28.265; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:43:28.328; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/collection1/'
+ERROR - 2014-11-05 16:43:28.343; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:43:28.347; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:43:28.347; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+ERROR - 2014-11-05 16:43:30.405; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: SolrCore 'collection1' is not available due to init failure: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:745)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:307)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/Volumes/Data/Work/Development/Coral/solr/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+
+INFO  - 2014-11-05 16:44:53.966; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1001563300
+INFO  - 2014-11-05 16:51:25.509; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:51:25.520; org.apache.solr.core.SolrResourceLoader; Using JNDI solr.home: /my/solr/home
+INFO  - 2014-11-05 16:51:25.521; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/my/solr/home/'
+INFO  - 2014-11-05 16:51:25.613; org.apache.solr.core.ConfigSolr; Loading container configuration from /my/solr/home/solr.xml
+INFO  - 2014-11-05 16:51:25.618; org.apache.solr.core.ConfigSolr; /my/solr/home/solr.xml does not exist, using default configuration
+INFO  - 2014-11-05 16:51:25.641; org.apache.solr.core.CoreContainer; New CoreContainer 25997671
+INFO  - 2014-11-05 16:51:25.641; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=/my/solr/home/]
+INFO  - 2014-11-05 16:51:25.649; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:51:25.649; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:51:25.649; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:51:25.649; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:51:25.649; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:51:25.650; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:51:25.650; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:51:25.650; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:51:25.650; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:51:25.672; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:51:25.674; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:51:25.674; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:51:25.675; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-11-05 16:51:25.734; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/my/solr/home/collection1/'
+ERROR - 2014-11-05 16:51:25.747; org.apache.solr.core.CoreContainer; Error creating core [collection1]: Could not load conf for core collection1: Error loading solr config from /my/solr/home/collection1/solrconfig.xml
+org.apache.solr.common.SolrException: Could not load conf for core collection1: Error loading solr config from /my/solr/home/collection1/solrconfig.xml
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:489)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from /my/solr/home/collection1/solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:80)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 7 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or '/my/solr/home/collection1/conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 9 more
+INFO  - 2014-11-05 16:51:25.749; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:51:25.749; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:52:35.766; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=25997671
+INFO  - 2014-11-05 16:52:36.679; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:52:36.685; org.apache.solr.core.SolrResourceLoader; Using JNDI solr.home: /Library/Tomcat/bin/solr
+INFO  - 2014-11-05 16:52:36.686; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Library/Tomcat/bin/solr/'
+INFO  - 2014-11-05 16:52:36.777; org.apache.solr.core.ConfigSolr; Loading container configuration from /Library/Tomcat/bin/solr/solr.xml
+INFO  - 2014-11-05 16:52:36.801; org.apache.solr.core.CoreContainer; New CoreContainer 788289579
+INFO  - 2014-11-05 16:52:36.802; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=/Library/Tomcat/bin/solr/]
+INFO  - 2014-11-05 16:52:36.808; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:52:36.809; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:52:36.809; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:52:36.809; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:52:36.809; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:52:36.809; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:52:36.810; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:52:36.810; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:52:36.810; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:52:36.831; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:52:36.833; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:52:36.834; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:52:36.835; org.apache.solr.core.CoreContainer; Host Name: null
+INFO  - 2014-11-05 16:52:36.895; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Library/Tomcat/bin/solr/captain_experts/'
+INFO  - 2014-11-05 16:52:36.927; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: 4.10.0
+INFO  - 2014-11-05 16:52:36.966; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-11-05 16:52:36.972; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-11-05 16:52:36.980; org.apache.solr.schema.IndexSchema; [captain_experts] Schema name=example core one
+INFO  - 2014-11-05 16:52:37.019; org.apache.solr.schema.IndexSchema; default search field in schema is _search
+INFO  - 2014-11-05 16:52:37.020; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-11-05 16:52:37.020; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-11-05 16:52:37.022; org.apache.solr.core.CoreContainer; Creating SolrCore 'captain_experts' using configuration from instancedir /Library/Tomcat/bin/solr/captain_experts/
+INFO  - 2014-11-05 16:52:37.044; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-11-05 16:52:37.051; org.apache.solr.core.SolrCore; [captain_experts] Opening new SolrCore at /Library/Tomcat/bin/solr/captain_experts/, dataDir=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/
+INFO  - 2014-11-05 16:52:37.051; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: captain_experts
+INFO  - 2014-11-05 16:52:37.061; org.apache.solr.core.CachingDirectoryFactory; return new directory for /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data
+INFO  - 2014-11-05 16:52:37.064; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index/
+WARN  - 2014-11-05 16:52:37.064; org.apache.solr.core.SolrCore; [captain_experts] Solr index directory '/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index' doesn't exist. Creating new index...
+INFO  - 2014-11-05 16:52:37.073; org.apache.solr.core.CachingDirectoryFactory; return new directory for /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index
+INFO  - 2014-11-05 16:52:37.109; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=1
+	commit{dir=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index,segFN=segments_1,generation=1}
+INFO  - 2014-11-05 16:52:37.110; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 1
+INFO  - 2014-11-05 16:52:37.167; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-11-05 16:52:37.174; org.apache.solr.core.RequestHandlers; created /update: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.175; org.apache.solr.core.RequestHandlers; created /update/json: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.175; org.apache.solr.core.RequestHandlers; created /update/csv: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.175; org.apache.solr.core.RequestHandlers; created /update/json/docs: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.177; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-11-05 16:52:37.177; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-11-05 16:52:37.177; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-11-05 16:52:37.179; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-11-05 16:52:37.179; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-11-05 16:52:37.179; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+WARN  - 2014-11-05 16:52:37.180; org.apache.solr.core.RequestHandlers; Multiple requestHandler registered to the same name: /update ignoring: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.180; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:37.180; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-11-05 16:52:37.182; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-11-05 16:52:37.186; org.apache.solr.core.SolrCore; [captain_experts]  CLOSING SolrCore org.apache.solr.core.SolrCore@739da1dd
+INFO  - 2014-11-05 16:52:37.186; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-11-05 16:52:37.186; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-11-05 16:52:37.187; org.apache.solr.core.SolrCore; [captain_experts] Closing main searcher on request.
+INFO  - 2014-11-05 16:52:37.187; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-11-05 16:52:37.188; org.apache.solr.core.CachingDirectoryFactory; looking to close /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index [CachedDir<<refCount=0;path=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index;done=false>>]
+INFO  - 2014-11-05 16:52:37.188; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index
+INFO  - 2014-11-05 16:52:37.189; org.apache.solr.core.CachingDirectoryFactory; looking to close /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data [CachedDir<<refCount=0;path=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data;done=false>>]
+INFO  - 2014-11-05 16:52:37.189; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data
+ERROR - 2014-11-05 16:52:37.189; org.apache.solr.core.CoreContainer; Error creating core [captain_experts]: RequestHandler init failure
+org.apache.solr.common.SolrException: RequestHandler init failure
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:873)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:646)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:491)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: RequestHandler init failure
+	at org.apache.solr.core.RequestHandlers.initHandlersFromConfig(RequestHandlers.java:172)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:792)
+	... 8 more
+Caused by: org.apache.solr.common.SolrException: Error loading class 'org.apache.solr.handler.dataimport.DataImportHandler'
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:490)
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:421)
+	at org.apache.solr.core.SolrCore.createInstance(SolrCore.java:543)
+	at org.apache.solr.core.SolrCore.createRequestHandler(SolrCore.java:616)
+	at org.apache.solr.core.RequestHandlers.initHandlersFromConfig(RequestHandlers.java:158)
+	... 9 more
+Caused by: java.lang.ClassNotFoundException: org.apache.solr.handler.dataimport.DataImportHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:798)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:344)
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:474)
+	... 13 more
+INFO  - 2014-11-05 16:52:37.190; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:52:37.190; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:52:37.417; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=788289579
+INFO  - 2014-11-05 16:52:40.683; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-11-05 16:52:40.695; org.apache.solr.core.SolrResourceLoader; Using JNDI solr.home: /Library/Tomcat/bin/solr
+INFO  - 2014-11-05 16:52:40.696; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Library/Tomcat/bin/solr/'
+INFO  - 2014-11-05 16:52:40.804; org.apache.solr.core.ConfigSolr; Loading container configuration from /Library/Tomcat/bin/solr/solr.xml
+INFO  - 2014-11-05 16:52:40.879; org.apache.solr.core.CoreContainer; New CoreContainer 1495289738
+INFO  - 2014-11-05 16:52:40.881; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=/Library/Tomcat/bin/solr/]
+INFO  - 2014-11-05 16:52:40.892; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-11-05 16:52:40.893; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-11-05 16:52:40.893; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-11-05 16:52:40.893; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-11-05 16:52:40.893; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-11-05 16:52:40.894; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-11-05 16:52:40.894; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-11-05 16:52:40.894; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-11-05 16:52:40.894; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-11-05 16:52:40.967; org.apache.solr.update.UpdateShardHandler; Creating UpdateShardHandler HTTP client with params: socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-11-05 16:52:40.970; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-11-05 16:52:40.971; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-11-05 16:52:40.972; org.apache.solr.core.CoreContainer; Host Name: null
+INFO  - 2014-11-05 16:52:41.015; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Library/Tomcat/bin/solr/captain_experts/'
+INFO  - 2014-11-05 16:52:41.051; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: 4.10.0
+INFO  - 2014-11-05 16:52:41.108; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-11-05 16:52:41.117; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-11-05 16:52:41.131; org.apache.solr.schema.IndexSchema; [captain_experts] Schema name=example core one
+INFO  - 2014-11-05 16:52:41.181; org.apache.solr.schema.IndexSchema; default search field in schema is _search
+INFO  - 2014-11-05 16:52:41.182; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-11-05 16:52:41.182; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-11-05 16:52:41.185; org.apache.solr.core.CoreContainer; Creating SolrCore 'captain_experts' using configuration from instancedir /Library/Tomcat/bin/solr/captain_experts/
+INFO  - 2014-11-05 16:52:41.299; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-11-05 16:52:41.304; org.apache.solr.core.SolrCore; [captain_experts] Opening new SolrCore at /Library/Tomcat/bin/solr/captain_experts/, dataDir=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/
+INFO  - 2014-11-05 16:52:41.304; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: captain_experts
+INFO  - 2014-11-05 16:52:41.314; org.apache.solr.core.CachingDirectoryFactory; return new directory for /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data
+INFO  - 2014-11-05 16:52:41.316; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index/
+INFO  - 2014-11-05 16:52:41.317; org.apache.solr.core.CachingDirectoryFactory; return new directory for /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index
+INFO  - 2014-11-05 16:52:41.391; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-11-05 16:52:41.399; org.apache.solr.core.RequestHandlers; created /update: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.399; org.apache.solr.core.RequestHandlers; created /update/json: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.399; org.apache.solr.core.RequestHandlers; created /update/csv: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.400; org.apache.solr.core.RequestHandlers; created /update/json/docs: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.403; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-11-05 16:52:41.403; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-11-05 16:52:41.404; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-11-05 16:52:41.405; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-11-05 16:52:41.405; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-11-05 16:52:41.405; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+WARN  - 2014-11-05 16:52:41.406; org.apache.solr.core.RequestHandlers; Multiple requestHandler registered to the same name: /update ignoring: org.apache.solr.handler.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.407; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-11-05 16:52:41.407; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-11-05 16:52:41.409; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-11-05 16:52:41.416; org.apache.solr.core.SolrCore; [captain_experts]  CLOSING SolrCore org.apache.solr.core.SolrCore@528c5b0b
+INFO  - 2014-11-05 16:52:41.416; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-11-05 16:52:41.417; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-11-05 16:52:41.417; org.apache.solr.core.SolrCore; [captain_experts] Closing main searcher on request.
+INFO  - 2014-11-05 16:52:41.418; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-11-05 16:52:41.418; org.apache.solr.core.CachingDirectoryFactory; looking to close /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index [CachedDir<<refCount=0;path=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index;done=false>>]
+INFO  - 2014-11-05 16:52:41.418; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data/index
+INFO  - 2014-11-05 16:52:41.419; org.apache.solr.core.CachingDirectoryFactory; looking to close /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data [CachedDir<<refCount=0;path=/usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data;done=false>>]
+INFO  - 2014-11-05 16:52:41.419; org.apache.solr.core.CachingDirectoryFactory; Closing directory: /usr/local/apache-tomcat-7.0.56/bin/solr/captain_experts/data
+ERROR - 2014-11-05 16:52:41.420; org.apache.solr.core.CoreContainer; Error creating core [captain_experts]: RequestHandler init failure
+org.apache.solr.common.SolrException: RequestHandler init failure
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:873)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:646)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:491)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:255)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.solr.common.SolrException: RequestHandler init failure
+	at org.apache.solr.core.RequestHandlers.initHandlersFromConfig(RequestHandlers.java:172)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:792)
+	... 8 more
+Caused by: org.apache.solr.common.SolrException: Error loading class 'org.apache.solr.handler.dataimport.DataImportHandler'
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:490)
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:421)
+	at org.apache.solr.core.SolrCore.createInstance(SolrCore.java:543)
+	at org.apache.solr.core.SolrCore.createRequestHandler(SolrCore.java:616)
+	at org.apache.solr.core.RequestHandlers.initHandlersFromConfig(RequestHandlers.java:158)
+	... 9 more
+Caused by: java.lang.ClassNotFoundException: org.apache.solr.handler.dataimport.DataImportHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:798)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:344)
+	at org.apache.solr.core.SolrResourceLoader.findClass(SolrResourceLoader.java:474)
+	... 13 more
+INFO  - 2014-11-05 16:52:41.424; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Volumes/Data/Work/Development/Coral
+INFO  - 2014-11-05 16:52:41.424; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-11-05 16:52:49.759; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1415186569738} status=0 QTime=11 
+INFO  - 2014-11-05 16:52:49.836; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/system params={wt=json&_=1415186569791} status=0 QTime=26 
+INFO  - 2014-11-05 16:53:15.569; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/logging params={wt=json&since=0&_=1415186595540} status=0 QTime=7 
+INFO  - 2014-11-05 16:53:21.543; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/cores params={wt=json&_=1415186601531} status=0 QTime=1 
+INFO  - 2014-11-05 16:53:23.149; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/properties params={wt=json&_=1415186603135} status=0 QTime=0 
+INFO  - 2014-11-05 16:53:24.923; org.apache.solr.servlet.SolrDispatchFilter; [admin] webapp=null path=/admin/info/threads params={wt=json&_=1415186604896} status=0 QTime=7 

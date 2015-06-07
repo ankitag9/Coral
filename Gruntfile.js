@@ -6,6 +6,7 @@ function init(grunt) {
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-prompt');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
@@ -155,6 +156,7 @@ function init(grunt) {
             }
         }
     });
+
     /* Generate indx.js by combining all generated .js files */
     grunt.registerMultiTask('generate-index', function () {
         this.files.forEach(function (file) {
@@ -165,6 +167,7 @@ function init(grunt) {
             grunt.file.write(file.dest, output);
         });
     });
+
     grunt.registerTask('default', ['clean', 'ts', 'concat', 'replace']);
     grunt.registerTask('publish', ['prompt:bump', 'bump']);
 }
